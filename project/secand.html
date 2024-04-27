@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protected Page</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #b6c3fb, #764ba2);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #000000;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1, p {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #050307;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInText 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #username {
+            color: #0a050f;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+            animation: fadeInText 1s ease-in-out forwards;
+            text-align: left; /* Align paragraph content to the left */
+            padding: 0 20px; /* Add padding to the paragraph */
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+            animation: fadeInText 1s ease-in-out forwards;
+        }
+
+        .decoration {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .decoration div {
+            width: 30px;
+            height: 30px;
+            background-color: #764ba2;
+            border-radius: 50%;
+            margin: 0 10px;
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, <span id="username"></span>!</h1>  
+        <p>
+            The project idea is a network project that has a client and server side:
+            <br>
+            <strong>Client:</strong> It has a GUI interface that can send requests.
+            <br>
+            <strong>Server:</strong> Works to handle these requests.
+            <br>
+            <strong>Login Form:</strong> I used it to check the authentication.
+            <br>
+            <strong>Second Page:</strong> It shows the username and the request status.
+        </p>                            
+            <p>    <span style="  font-size: 24px; animation: fadeInText 1s ease-in-out forwards;">Status: 200 </span> <span id="status"></span></p>
+        <script>
+            window.onload = function() {
+                document.getElementById("username").textContent = "{username}";
+            }
+        </script>
+        
+    </div>
+</body>
+</html>
